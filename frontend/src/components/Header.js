@@ -18,8 +18,6 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     'display' : 'flex',
     'justify-content': 'center',
-    //alignItems: 'center',
-    //align: 'center',
   },
   button: {
   }
