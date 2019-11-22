@@ -14,9 +14,12 @@ app = Flask(__name__, static_folder=STATIC_DIR)
 
 @app.route('/api/sample')
 def items():
-    '''Sample API route for data'''
+    ''' Sample API returns repeated query words '''
+    query = request.args.get('query', '')
     page = int(request.args.get('page', 1))
-    return jsonify({'foo': 'a', 'bar': 'b', 'page': page})
+    sort = request.args.get('sort')
+    res  = [query * i for i in range(1, 11)] if query else []
+    return jsonify(res)
 
 
 ''' static html '''
