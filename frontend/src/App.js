@@ -11,16 +11,11 @@ import axios from 'axios';
 import Header from './components/Header';
 import KeywordSuggest from './components/KeywordSuggest';
 
-import config from './config'
-
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      header: {
-        title: config.pageTitle,
-      },
       params: {
         query: '',
       },
@@ -63,7 +58,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header info={this.state.header} />
+        <Header />
         <Container maxWidth='md'>
           <div>
             <KeywordSuggest

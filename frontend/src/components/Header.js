@@ -36,7 +36,7 @@ const Header = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h5" className={classes.title}>
-            {props.info.title}
+            {process.env.REACT_APP_WEBSITE_NAME}
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
