@@ -33,7 +33,7 @@ def index(path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Flask web application server')
     parser.add_argument('--port', type=int, dest='port', required=False,
-                        default=os.environ.get('PORT', 8080), help='port number.')
+                        default=int(os.environ.get('PORT', 8080)), help='port number.')
     parser.add_argument('--is_dev', dest='is_dev', action='store_true',
                         help='running on dev mode or not')
     args = parser.parse_args()
