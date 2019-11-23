@@ -9,7 +9,7 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-set -ex
+set -e
 
 IMAGE_NAME=$1
 TAG=`date '+%Y%m%d-%H%M'`
@@ -28,3 +28,10 @@ docker image tag ${IMAGE_NAME} ${IMAGE_NAME}:${TAG} \
 #                 ${IMAGE_REGISTRY}/${IMAGE_NAME}
 #docker image tag ${IMAGE_NAME} \
 #                 ${IMAGE_REGISTRY}/${IMAGE_NAME}:${TAG}
+
+echo "\n"
+echo "************************************************************"
+echo "*** COMPLETED Building Image!"
+echo "*** Run the following command to start container. "
+echo "***   sudo docker run --rm -p {PORT}:{PORT} ${IMAGE_NAME}  "
+echo "************************************************************"

@@ -6,12 +6,10 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-set -ex
+set -e
 
 # run container as 'Docker outside of Docker'(dood) container.
 # that can execute docker command in the container.
-# After this execution of this script, run the following dommand to run app
-#       sudo docker run --rm -p {PORT}:{PORT} {IMAGE_NAME}
 
 IMAGE_NAME=$1
 BASEDIR=$(cd $(dirname $0)/..; pwd)
